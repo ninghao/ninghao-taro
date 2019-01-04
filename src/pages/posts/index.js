@@ -17,7 +17,7 @@ class PostIndex extends Component {
 
   async componentWillMount() {
     const response = await Taro.request({
-      url: 'http://localhost:3333/posts'
+      url: `${API_HOST}/posts`
     })
 
     console.log(response.data)
