@@ -6,10 +6,15 @@ class PostIndex extends Component {
     navigationBarTitleText: 'Posts'
   }
 
+  handleClick(name, event) {
+    console.log(event)
+    console.log(`hello ${name}`)
+  }
+
   render() {
     return (
       <View>
-        <Text>List</Text>
+        <Text onClick={this.handleClick.bind(this, 'ninghao')}>List</Text>
       </View>
     )
   }
