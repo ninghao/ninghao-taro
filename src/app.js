@@ -14,6 +14,7 @@ class App extends Component {
   config = {
     pages: [
       'pages/posts/index',
+      'pages/posts/show',
       'pages/index/index'
     ],
     window: {

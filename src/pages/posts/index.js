@@ -1,4 +1,4 @@
-import { Component } from '@tarojs/taro'
+import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 
 class PostIndex extends Component {
@@ -9,6 +9,10 @@ class PostIndex extends Component {
   handleClick(name, event) {
     console.log(event)
     console.log(`hello ${name}`)
+
+    Taro.navigateTo({
+      url: '/pages/posts/show'
+    })
   }
 
   render() {
