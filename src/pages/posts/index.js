@@ -33,10 +33,15 @@ class PostIndex extends Component {
 
   render() {
     return (
-      <View>
-        <Text onClick={this.handleClick.bind(this, 'ninghao', 3)}>List</Text>
+      <View className="container">
         {posts.map((post) => 
-          <View key={post.id}>{post.title}</View> 
+          <View className="card" key={post.id}>
+            <Image mode="aspectFill" className="card-img-top" src={post.imageUrl} />
+            <View className="card-body">
+              <View className="card-title">{post.title}</View>
+              <View className="card-subtitle">{post.author}</View>
+            </View>
+          </View> 
         )}
       </View>
     )

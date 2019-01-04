@@ -1,0 +1,27 @@
+.container {
+  margin: 32px;
+}
+
+.card {
+  margin-bottom: 32px;
+}
+
+.card-img-top {
+  width: 100%;
+  display: block;
+}
+
+.card-body {
+  padding: 32px;
+  border: 1px solid #eee;
+  border-top: none;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-subtitle {
+  opacity: 0.5;
+  font-size: 24px;
+}
