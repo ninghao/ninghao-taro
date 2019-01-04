@@ -11,6 +11,10 @@ class PostShow extends Component {
     console.log(`hello ${name}`)
   }
 
+  componentWillMount() {
+    console.log(this.$router.params)
+  }
+
   render() {
     return (
       <View>
