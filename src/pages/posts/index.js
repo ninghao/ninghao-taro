@@ -10,12 +10,9 @@ class PostIndex extends Component {
     navigationBarTitleText: 'Posts'
   }
 
-  handleClick(name, id, event) {
-    console.log(event)
-    console.log(`hello ${name}`)
-
+  handleClick(id, event) {
     Taro.navigateTo({
-      url: `/pages/posts/show?id=${id}&name=${name}`
+      url: `/pages/posts/show?id=${id}`
     })
   }
 
@@ -35,7 +32,7 @@ class PostIndex extends Component {
     return (
       <View className="container">
         {posts.map((post) => 
-          <View className="card" key={post.id}>
+          <View className="card" key={post.id} onClick={this.handleClick.bind(this, post.id)}>
             <Image mode="aspectFill" className="card-img-top" src={post.imageUrl} />
             <View className="card-body">
               <View className="card-title">{post.title}</View>
