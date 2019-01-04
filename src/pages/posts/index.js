@@ -15,13 +15,12 @@ class PostIndex extends Component {
     })
   }
 
-  componentWillMount() {
-    Taro.request({
+  async componentWillMount() {
+    const response = await Taro.request({
       url: 'http://localhost:3333/posts'
     })
-    .then(response => {
-      console.log(response.data)
-    })
+
+    console.log(response.data)
   }
 
   render() {
