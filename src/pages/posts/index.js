@@ -2,6 +2,10 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 
 class PostIndex extends Component {
+  state = {
+    posts: []
+  }
+  
   config = {
     navigationBarTitleText: 'Posts'
   }
@@ -20,6 +24,10 @@ class PostIndex extends Component {
       url: `${API_HOST}/posts`
     })
 
+    this.setState({
+      posts: response.data
+    })
+
     console.log(response.data)
   }
 
@@ -27,6 +35,9 @@ class PostIndex extends Component {
     return (
       <View>
         <Text onClick={this.handleClick.bind(this, 'ninghao', 3)}>List</Text>
+        {posts.map((post) => 
+          <View key={post.id}>{post.title}</View> 
+        )}
       </View>
     )
   }
